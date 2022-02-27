@@ -20,6 +20,7 @@
         <Button Content="-" HorizontalAlignment="Left" Margin="294,285,0,0" VerticalAlignment="Top" Height="68" Width="64" FontSize="36" Click="Button_Click_1"/>
         <Button Content="*" HorizontalAlignment="Left" Margin="388,285,0,0" VerticalAlignment="Top" Height="68" Width="79" FontSize="36" Click="Button_Click_2"/>
         <Button Content="/" HorizontalAlignment="Left" Margin="510,285,0,0" VerticalAlignment="Top" Height="68" Width="78" FontSize="36"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="666,285,0,0" VerticalAlignment="Top" Height="54" Width="87" Click="Button_Click_5"/>
 
     </Grid>
 </Window>

@@ -89,11 +89,26 @@ namespace ITParkWPF
             if(b == 0)
             {
                 MessageBox.Show("Division by zero is impossible!");
-                return;
+                
             }
             else
             lblMessage.Content = (a / b).ToString();
         }
-        
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (b == 0)
+            {
+                MessageBox.Show("Division by zero is impossible!");
+
+            }
+            else
+                lblMessage.Content = (a / b).ToString();
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            lblMessage.Content =  Math.Pow(a, b);
+        }
     }
 }
