@@ -110,5 +110,7 @@ namespace ITParkWPF
         {
             lblMessage.Content =  Math.Pow(a, b);
         }
+
+        // Создать кнопочный калькулятор с действиями + - / * 
     }
 }
