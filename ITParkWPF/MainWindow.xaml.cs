@@ -27,12 +27,6 @@ namespace ITParkWPF
             InitializeComponent();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Form has loaded!");
-            
-        }
-
         private void bigbtn_Click(object sender, RoutedEventArgs e)
         {
             //a = a + int.Parse(txt1.Text);
@@ -92,6 +86,12 @@ namespace ITParkWPF
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            if(b == 0)
+            {
+                MessageBox.Show("Division by zero is impossible!");
+                return;
+            }
+            else
             lblMessage.Content = (a / b).ToString();
         }
         

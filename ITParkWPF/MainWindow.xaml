@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="816" Loaded="Window_Loaded" >
+        Title="MyWpfApp" Height="522" Width="816" >
     <Grid>
         <Grid.ColumnDefinitions>
 
