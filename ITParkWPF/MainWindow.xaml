@@ -5,20 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="564" >
+        Title="MyWpfApp" Height="522" Width="860" >
     <Grid>
         <Grid.ColumnDefinitions>
 
         </Grid.ColumnDefinitions>
-        <Button Content="+" HorizontalAlignment="Left" Margin="28,405,0,0" VerticalAlignment="Top" Height="68" Width="81" FontSize="36" Click="Button_Click_2"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="141,405,0,0" VerticalAlignment="Top" Height="68" Width="64" FontSize="36" Click="Button_Click_4" />
-        <Button Content="*" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="68" Width="79" FontSize="36" />
-        <Button Content="/" HorizontalAlignment="Left" Margin="357,405,0,0" VerticalAlignment="Top" Height="68" Width="78" FontSize="36"/>
-        <Label x:Name="lblNumber" Content="0" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Height="62" Width="544" FontSize="36" HorizontalContentAlignment="Right"/>
-        <Button x:Name="btnOne" Content="1" HorizontalAlignment="Left" Margin="28,130,0,0" VerticalAlignment="Top" Height="58" Width="61" FontSize="36" Click="Button_Click"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="118,130,0,0" VerticalAlignment="Top" Height="58" Width="72" FontSize="36" Click="Button_Click_1"/>
-        <Button Content="Res" HorizontalAlignment="Left" Margin="460,405,0,0" VerticalAlignment="Top" Height="68" Width="73" Click="Button_Click_3"/>
-        <Button Content="backspace" HorizontalAlignment="Left" Margin="242,316,0,0" VerticalAlignment="Top" Click="Button_Click_5"/>
+        <GroupBox Header="Registration" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="486" Width="418">
+            <TextBox HorizontalAlignment="Left" Margin="10,0,0,0" Text="Login" TextWrapping="Wrap" Width="365" Height="45" VerticalAlignment="Top"/>
+        </GroupBox>
+        <TextBox HorizontalAlignment="Left" Margin="238,110,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="238,244,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="238,172,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
+        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="238,311,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36"/>
 
     </Grid>
 </Window>
