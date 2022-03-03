@@ -10,20 +10,20 @@ namespace ITParkWPF
 {
     class User
     {
-        public User(string name, string login, string email, string phoneNumber)
+        public User(string login, string name, string email, string phoneNumber)
         {
-            Name = name;
             Login = login;
+            Name = name;
             Email = email;
             PhoneNumber = phoneNumber;
         }
         public ObjectId _id { get; set; }
-        public string Name { get; set; }
         public string Login { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
-        public static void AddToDB(string name, string login, string email, string phone)
+        public static void AddToDB(string login, string name, string email, string phone)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
@@ -44,12 +44,12 @@ namespace ITParkWPF
             }
             return listToReturn;
         }
-        public static User GetUser(string name)
+        public static User GetUser(string login)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
-            var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
+            var foundedUser = collection.Find(x => x.Login == login).FirstOrDefault();
             return foundedUser;
         }
 

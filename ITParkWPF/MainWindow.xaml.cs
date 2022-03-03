@@ -21,7 +21,7 @@ namespace ITParkWPF
     public partial class MainWindow : Window
     {
        string bufLogin = "Login";
-        User user = new User("Name", "Login", "E-Mail", "Phone");
+        User user = new User("Login", "Name", "E-Mail", "Phone");
         public MainWindow()
         {
             InitializeComponent();
@@ -78,8 +78,8 @@ namespace ITParkWPF
             }
             else
             {
-                txtLogin.Text = User.GetUser(listLogin.SelectedItem.ToString()).Login;
                 txtName1.Text = User.GetUser(listLogin.SelectedItem.ToString()).Name;
+                txtLogin.Text = User.GetUser(listLogin.SelectedItem.ToString()).Login;
                 txtEmail.Text = User.GetUser(listLogin.SelectedItem.ToString()).Email;
                 txtPhone.Text = User.GetUser(listLogin.SelectedItem.ToString()).PhoneNumber;
 
