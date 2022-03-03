@@ -5,22 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="816" >
+        Title="MyWpfApp" Height="522" Width="564" >
     <Grid>
         <Grid.ColumnDefinitions>
 
         </Grid.ColumnDefinitions>
-        <Button x:Name="bigbtn" Content="ShowRes" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Height="101" Width="301" FontSize="72" Click="bigbtn_Click"/>
-        <Label x:Name="lbl1" Content="My First WPF APP" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="796" FontSize="65" HorizontalContentAlignment="Center" FontFamily="Txt" Margin="10,62,0,0" Grid.ColumnSpan="2" FontWeight="Bold" MouseMove="lbl1_MouseMove" MouseEnter="lbl1_MouseEnter"/>
-        <Border BorderThickness="1" BorderBrush="Black" Margin="329,379,10,26" Height="101"/>
-        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="329,379,0,0" VerticalAlignment="Top" Width="477" Height="101" FontSize="70" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Left" Margin="10,178,0,0" Text="First Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" Height="88" FontSize="48" GotFocus="txt1_GotFocus" TextChanged="txt1_TextChanged"/>
-        <TextBox x:Name="txt2" HorizontalAlignment="Left" Margin="408,178,0,0" Text="Second Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" Height="88" FontSize="48" GotFocus="txt2_GotFocus" TextChanged="txt2_TextChanged"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="182,285,0,0" VerticalAlignment="Top" Height="68" Width="81" FontSize="36" Click="Button_Click"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="294,285,0,0" VerticalAlignment="Top" Height="68" Width="64" FontSize="36" Click="Button_Click_1"/>
-        <Button Content="*" HorizontalAlignment="Left" Margin="388,285,0,0" VerticalAlignment="Top" Height="68" Width="79" FontSize="36" Click="Button_Click_2"/>
-        <Button Content="/" HorizontalAlignment="Left" Margin="510,285,0,0" VerticalAlignment="Top" Height="68" Width="78" FontSize="36"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="666,285,0,0" VerticalAlignment="Top" Height="54" Width="87" Click="Button_Click_5"/>
+        <Button Content="+" HorizontalAlignment="Left" Margin="28,405,0,0" VerticalAlignment="Top" Height="68" Width="81" FontSize="36" Click="Button_Click_2"/>
+        <Button Content="-" HorizontalAlignment="Left" Margin="141,405,0,0" VerticalAlignment="Top" Height="68" Width="64" FontSize="36" Click="Button_Click_4" />
+        <Button Content="*" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Height="68" Width="79" FontSize="36" />
+        <Button Content="/" HorizontalAlignment="Left" Margin="357,405,0,0" VerticalAlignment="Top" Height="68" Width="78" FontSize="36"/>
+        <Label x:Name="lblNumber" Content="0" HorizontalAlignment="Center" Margin="0,34,0,0" VerticalAlignment="Top" Height="62" Width="544" FontSize="36" HorizontalContentAlignment="Right"/>
+        <Button x:Name="btnOne" Content="1" HorizontalAlignment="Left" Margin="28,130,0,0" VerticalAlignment="Top" Height="58" Width="61" FontSize="36" Click="Button_Click"/>
+        <Button Content="2" HorizontalAlignment="Left" Margin="118,130,0,0" VerticalAlignment="Top" Height="58" Width="72" FontSize="36" Click="Button_Click_1"/>
+        <Button Content="Res" HorizontalAlignment="Left" Margin="460,405,0,0" VerticalAlignment="Top" Height="68" Width="73" Click="Button_Click_3"/>
+        <Button Content="backspace" HorizontalAlignment="Left" Margin="242,316,0,0" VerticalAlignment="Top" Click="Button_Click_5"/>
 
     </Grid>
 </Window>

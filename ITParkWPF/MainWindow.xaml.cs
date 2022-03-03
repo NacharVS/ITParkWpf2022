@@ -22,95 +22,85 @@ namespace ITParkWPF
     {
         static double a = 0;
         static double b = 0;
+
+        static string label = "0";
+        static string sign;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void bigbtn_Click(object sender, RoutedEventArgs e)
-        {
-            //a = a + int.Parse(txt1.Text);
-            lblMessage.Content = (int.Parse(txt1.Text) + int.Parse(txt2.Text)).ToString();
-        }
-
-        private void lbl1_MouseMove(object sender, MouseEventArgs e)
-        {
-            lbl1.IsEnabled = !lbl1.IsEnabled;
-        }
-
-        private void lbl1_MouseEnter(object sender, MouseEventArgs e)
-        {
-            lbl1.IsEnabled = !lbl1.IsEnabled;
-        }
-
-        private void txt1_GotFocus(object sender, RoutedEventArgs e)
-        {
-            txt1.Clear();
-        }
-
-        private void txt2_GotFocus(object sender, RoutedEventArgs e)
-        {
-            txt2.Clear();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            lblMessage.Content = (a + b).ToString();
-        }
-
-        private void txt1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt1.Text == "First Number")
-                return;
-            if (txt1.Text == "" || txt1.Text == null)
-                return;
-            a = double.Parse(txt1.Text);
-        }
-
-        private void txt2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt2.Text == "Second Number" || txt2.Text == "" || txt2.Text == null)
-                return;
-            b = double.Parse(txt2.Text);
+            if(label == "0")
+            {
+                label = "1";
+                lblNumber.Content = label;
+            }
+            else
+            {
+                label = "1";
+                lblNumber.Content += label;
+            }
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            lblMessage.Content = a - b;
+            if (label == "0")
+            {
+                label = "2";
+                lblNumber.Content = label;
+            }
+            else
+            {
+                label = "2";
+                lblNumber.Content += label;
+            }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            lblMessage.Content = (a * b).ToString();
+            sign = "+";
+            a = Convert.ToInt32(lblNumber.Content);
+            lblNumber.Content = "0";
+            label = "0";
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if(b == 0)
+            switch (sign)
             {
-                MessageBox.Show("Division by zero is impossible!");
-                
+                case "+":
+                    b = Convert.ToInt32(lblNumber.Content);
+                    a = a + b;
+                    lblNumber.Content = a.ToString();
+                    break;
+                case "-":
+                    b = a - Convert.ToInt32(lblNumber.Content);
+                    lblNumber.Content = b.ToString();
+                    break;
             }
-            else
-            lblMessage.Content = (a / b).ToString();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (b == 0)
-            {
-                MessageBox.Show("Division by zero is impossible!");
-
-            }
-            else
-                lblMessage.Content = (a / b).ToString();
+            sign = "-";
+            a = Convert.ToInt32(lblNumber.Content);
+            lblNumber.Content = "0";
+            label = "0";
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            lblMessage.Content =  Math.Pow(a, b);
+            if (Convert.ToInt32(lblNumber.Content) / 10 == 0)
+            {
+                lblNumber.Content = "0";
+                label = "0";
+            }
+            else
+            {
+                lblNumber.Content = ((Convert.ToInt32(lblNumber.Content)) / 10).ToString();
+            }
         }
-
-        // Создать кнопочный калькулятор с действиями + - / * 
     }
 }
