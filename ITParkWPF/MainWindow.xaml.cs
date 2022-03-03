@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ITParkWPF
+namespace Calculator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -22,95 +22,322 @@ namespace ITParkWPF
     {
         static double a = 0;
         static double b = 0;
+        static int z = 0;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void bigbtn_Click(object sender, RoutedEventArgs e)
+        private void One_Click(object sender, RoutedEventArgs e)
         {
-            //a = a + int.Parse(txt1.Text);
-            lblMessage.Content = (int.Parse(txt1.Text) + int.Parse(txt2.Text)).ToString();
-        }
-
-        private void lbl1_MouseMove(object sender, MouseEventArgs e)
-        {
-            lbl1.IsEnabled = !lbl1.IsEnabled;
-        }
-
-        private void lbl1_MouseEnter(object sender, MouseEventArgs e)
-        {
-            lbl1.IsEnabled = !lbl1.IsEnabled;
-        }
-
-        private void txt1_GotFocus(object sender, RoutedEventArgs e)
-        {
-            txt1.Clear();
-        }
-
-        private void txt2_GotFocus(object sender, RoutedEventArgs e)
-        {
-            txt2.Clear();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            lblMessage.Content = (a + b).ToString();
-        }
-
-        private void txt1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt1.Text == "First Number")
-                return;
-            if (txt1.Text == "" || txt1.Text == null)
-                return;
-            a = double.Parse(txt1.Text);
-        }
-
-        private void txt2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txt2.Text == "Second Number" || txt2.Text == "" || txt2.Text == null)
-                return;
-            b = double.Parse(txt2.Text);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            lblMessage.Content = a - b;
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            lblMessage.Content = (a * b).ToString();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            if(b == 0)
+            if (a != 0)
             {
-                MessageBox.Show("Division by zero is impossible!");
-                
+                a = a * 10 + 1;
+                Lbl.Content = a;
             }
             else
-            lblMessage.Content = (a / b).ToString();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            if (b == 0)
             {
-                MessageBox.Show("Division by zero is impossible!");
-
+                a = 1;
+                Lbl.Content = a;
+            }
+        }
+        private void Two_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 2;
+                Lbl.Content = a;
             }
             else
-                lblMessage.Content = (a / b).ToString();
+            {
+                a = 2;
+                Lbl.Content = a;
+            }
         }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
+        private void Three_Click(object sender, RoutedEventArgs e)
         {
-            lblMessage.Content =  Math.Pow(a, b);
+            if (a != 0)
+            {
+                a = a * 10 + 3;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 3;
+                Lbl.Content = a;
+            }
         }
 
-        // Создать кнопочный калькулятор с действиями + - / * 
+        private void Four_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 4;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 4;
+                Lbl.Content = a;
+            }
+        }
+
+        private void Five_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 5;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 5;
+                Lbl.Content = a;
+            }
+        }
+
+        private void Six_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 6;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 6;
+                Lbl.Content = a;
+            }
+        }
+
+        private void Seven_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 7;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 7;
+                Lbl.Content = a;
+            }
+        }
+
+        private void Eight_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 8;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 8;
+                Lbl.Content = a;
+            }
+        }
+
+        private void Nine_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10 + 9;
+                Lbl.Content = a;
+            }
+            else
+            {
+                a = 9;
+                Lbl.Content = a;
+            }
+        }
+
+        private void Zero_Click(object sender, RoutedEventArgs e)
+        {
+            if (a != 0)
+            {
+                a = a * 10;
+                Lbl.Content = a;
+            }
+            else
+            {
+                Lbl.Content = a;
+            }
+        }
+
+        private void Plus_Click(object sender, RoutedEventArgs e)
+        {
+            if (z == 0)
+            {
+                z = 1;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+            else
+            {
+                Result_Click(sender, e);
+                z = 1;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+        }
+
+        private void Minus_Click(object sender, RoutedEventArgs e)
+        {
+            if (z == 0)
+            {
+                z = 2;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+            else
+            {
+                Result_Click(sender, e);
+                z = 2;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+        }
+
+        private void Multiplication_Click(object sender, RoutedEventArgs e)
+        {
+            if (z == 0)
+            {
+                z = 3;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+            else
+            {
+                Result_Click(sender, e);
+                z = 3;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+        }
+
+        private void Division_Click(object sender, RoutedEventArgs e)
+        {
+            if (z == 0)
+            {
+                z = 4;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else if (a != 0)
+                {
+                    Result_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Division by zero is impossible!");
+                }
+            }
+            else
+            {
+                Result_Click(sender, e);
+                z = 4;
+                if (b == 0)
+                {
+                    b = a;
+                    a = 0;
+                }
+                else
+                {
+                    Result_Click(sender, e);
+                }
+            }
+        }
+        private void DEL_Click(object sender, RoutedEventArgs e)
+        {
+            Lbl.Content=0;
+            a=0;
+            b=0;
+            z=0;
+        }
+
+        private void Result_Click(object sender, RoutedEventArgs e)
+        {
+                switch (z)
+                {
+                    case 1: 
+                   b = b + a;
+                    Lbl.Content=b;
+                    a=0;
+                    break;
+                    case 2: 
+                    b = b - a;
+                    Lbl.Content = b;
+                    a = 0;
+                    break;
+                case 3: 
+                    b = b * a;
+                    Lbl.Content = b;
+                    a = 0;
+                    break;
+                case 4:
+                    if (a != 0)
+                    {
+                        b = b / a;
+                        Lbl.Content = b;
+                        a = 0;
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Division by zero is impossible!");
+                        break;
+                    }
+                default: 
+                    Lbl.Content = 0;
+                    break;
+            }
+            
+        }
     }
 }
