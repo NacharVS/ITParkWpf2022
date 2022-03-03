@@ -44,5 +44,16 @@ namespace ITParkWPF
             }
             return listToReturn;
         }
+        public static User GetUser(string name)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Registration");
+            var collection = database.GetCollection<User>("Users");
+            var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
+            return foundedUser;
+        }
+
+        // Реализовать кнопку редактирования уже существующего пользователя
+
     }
 }

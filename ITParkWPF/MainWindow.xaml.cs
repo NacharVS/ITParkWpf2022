@@ -21,9 +21,11 @@ namespace ITParkWPF
     public partial class MainWindow : Window
     {
        string bufLogin = "Login";
+        User user = new User("Name", "Login", "E-Mail", "Phone");
         public MainWindow()
         {
             InitializeComponent();
+            
         }      
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -66,6 +68,32 @@ namespace ITParkWPF
         private void listLogin_Loaded(object sender, RoutedEventArgs e)
         {
             listLogin.ItemsSource = User.GetLoginList();
+        }
+
+        private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(listLogin.SelectedIndex == -1)
+            {
+                return;
+            }
+            else
+            {
+                txtLogin.Text = User.GetUser(listLogin.SelectedItem.ToString()).Login;
+                txtName1.Text = User.GetUser(listLogin.SelectedItem.ToString()).Name;
+                txtEmail.Text = User.GetUser(listLogin.SelectedItem.ToString()).Email;
+                txtPhone.Text = User.GetUser(listLogin.SelectedItem.ToString()).PhoneNumber;
+
+            }
+        }
+
+        private void listLogin_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

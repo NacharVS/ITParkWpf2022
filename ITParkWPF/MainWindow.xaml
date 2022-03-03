@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="860" >
+        Title="MyWpfApp" Height="522" Width="860" Loaded="Window_Loaded" >
     <Grid>
         <Grid.ColumnDefinitions>
 
@@ -17,7 +17,7 @@
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="58,245,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="58,174,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
         <Button Content="Sign Up" HorizontalAlignment="Left" Margin="58,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
-        <ListBox x:Name="listLogin" Margin="459,24,18,20" Loaded="listLogin_Loaded"/>
+        <ListBox x:Name="listLogin" Margin="459,24,18,20" Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged" />
         <Button Content="UpdateUser" HorizontalAlignment="Left" Margin="58,417,0,0" VerticalAlignment="Top" Width="372" Height="69" Click="Button_Click_1" FontSize="36"/>
 
     </Grid>
