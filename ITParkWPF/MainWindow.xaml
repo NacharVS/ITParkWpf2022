@@ -11,12 +11,12 @@
 
         </Grid.ColumnDefinitions>
         <GroupBox Header="Registration" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="486" Width="418">
-            <TextBox HorizontalAlignment="Left" Margin="10,0,0,0" Text="Login" TextWrapping="Wrap" Width="365" Height="45" VerticalAlignment="Top"/>
+            <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="10,0,0,0" Text="Login" TextWrapping="Wrap" Width="365" Height="45" VerticalAlignment="Top"/>
         </GroupBox>
-        <TextBox HorizontalAlignment="Left" Margin="238,110,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Margin="238,244,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
-        <TextBox HorizontalAlignment="Left" Margin="238,172,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
-        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="238,311,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36"/>
+        <TextBox x:Name="txtName1" HorizontalAlignment="Left" Margin="238,110,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="238,244,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="238,172,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
+        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="238,311,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
 
     </Grid>
 </Window>

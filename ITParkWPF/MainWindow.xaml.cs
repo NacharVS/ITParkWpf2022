@@ -24,5 +24,12 @@ namespace ITParkWPF
         {
             InitializeComponent();
         }      
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            User.AddToDB(txtLogin.Text, txtName1.Text, txtEmail.Text, txtPhone.Text);
+            MessageBox.Show($"User {txtLogin.Text} has registered");
+        }
+
     }
 }
