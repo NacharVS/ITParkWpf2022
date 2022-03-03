@@ -29,7 +29,7 @@ namespace ITParkWPF
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             User.AddToDB(txtLogin.Text, txtName1.Text, txtEmail.Text, txtPhone.Text);
-            listLogin.Items.Add(txtLogin.Text);
+            listLogin.ItemsSource = User.GetLoginList();
             MessageBox.Show($"User {txtLogin.Text} has registered");
         }
 
@@ -65,7 +65,7 @@ namespace ITParkWPF
 
         private void listLogin_Loaded(object sender, RoutedEventArgs e)
         {
-
+            listLogin.ItemsSource = User.GetLoginList();
         }
     }
 }

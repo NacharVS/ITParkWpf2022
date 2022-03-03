@@ -18,7 +18,7 @@
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="58,174,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
         <Button Content="Sign Up" HorizontalAlignment="Left" Margin="58,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
         <ListBox x:Name="listLogin" Margin="459,24,18,20" Loaded="listLogin_Loaded"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="66,397,0,0" VerticalAlignment="Top" Width="356" Height="62" Click="Button_Click_1"/>
+        <Button Content="UpdateUser" HorizontalAlignment="Left" Margin="58,417,0,0" VerticalAlignment="Top" Width="372" Height="69" Click="Button_Click_1" FontSize="36"/>
 
     </Grid>
 </Window>

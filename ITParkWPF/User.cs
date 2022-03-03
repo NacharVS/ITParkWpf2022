@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace ITParkWPF
             Email = email;
             PhoneNumber = phoneNumber;
         }
-
+        public ObjectId _id { get; set; }
         public string Name { get; set; }
         public string Login { get; set; }
         public string Email { get; set; }
@@ -28,7 +29,20 @@ namespace ITParkWPF
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
             collection.InsertOne(new User(login, name, email, phone));
+        }
 
+        public static List<string> GetLoginList()
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Registration");
+            var collection = database.GetCollection<User>("Users");
+            var listUsersFromDB = collection.Find(x => true).ToList();
+            List<string> listToReturn = new List<string>();
+            foreach (var item in listUsersFromDB)
+            {
+                listToReturn.Add(item.Login);
+            }
+            return listToReturn;
         }
     }
 }
