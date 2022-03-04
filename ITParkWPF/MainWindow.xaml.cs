@@ -20,97 +20,86 @@ namespace ITParkWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        static double a = 0;
-        static double b = 0;
+
+        string bufLogin = "Login";
+        User user = new User("Name", "Login", "E-mail", "Phone");
         public MainWindow()
         {
             InitializeComponent();
+           
         }
 
-        private void bigbtn_Click(object sender, RoutedEventArgs e)
+        private void SignUp_Click(object sender, RoutedEventArgs e)
         {
-            //a = a + int.Parse(txt1.Text);
-            lblMessage.Content = (int.Parse(txt1.Text) + int.Parse(txt2.Text)).ToString();
+            User.AddToDB(Nametxt.Text, Logintxt.Text, Emailtxt.Text, Phonetxt.Text);
+            listLogin.ItemsSource = User.GetLoginList();
+            MessageBox.Show($"User {Logintxt.Text} has registrated");
+
         }
 
-        private void lbl1_MouseMove(object sender, MouseEventArgs e)
+        private void Logintxt_GotFocus(object sender, RoutedEventArgs e)
         {
-            lbl1.IsEnabled = !lbl1.IsEnabled;
+            if (bufLogin!="Login")
+            {
+                return;
+            }
+            else 
+            Logintxt.Clear();   
         }
 
-        private void lbl1_MouseEnter(object sender, MouseEventArgs e)
+        private void Nametxt_GotFocus(object sender, RoutedEventArgs e)
         {
-            lbl1.IsEnabled = !lbl1.IsEnabled;
+            Nametxt.Clear();
         }
 
-        private void txt1_GotFocus(object sender, RoutedEventArgs e)
+        private void Emailtxt_GotFocus(object sender, RoutedEventArgs e)
         {
-            txt1.Clear();
+            Emailtxt.Clear();
         }
 
-        private void txt2_GotFocus(object sender, RoutedEventArgs e)
+        private void Phonetxt_GotFocus(object sender, RoutedEventArgs e)
         {
-            txt2.Clear();
+            Phonetxt.Clear();
+        }
+
+        private void Logintxt_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            bufLogin = Logintxt.Text;
+        }
+
+        private void Logintxt_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            lblMessage.Content = (a + b).ToString();
+            User.UpdateUser(Nametxt.Text, new User(Nametxt.Text, Logintxt.Text, Emailtxt.Text, Phonetxt.Text));
         }
 
-        private void txt1_TextChanged(object sender, TextChangedEventArgs e)
+        private void listLogin_Loaded(object sender, RoutedEventArgs e)
         {
-            if (txt1.Text == "First Number")
-                return;
-            if (txt1.Text == "" || txt1.Text == null)
-                return;
-            a = double.Parse(txt1.Text);
+
+            listLogin.ItemsSource = User.GetLoginList();
         }
 
-        private void txt2_TextChanged(object sender, TextChangedEventArgs e)
+        private void listLogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (txt2.Text == "Second Number" || txt2.Text == "" || txt2.Text == null)
-                return;
-            b = double.Parse(txt2.Text);
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            lblMessage.Content = a - b;
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            lblMessage.Content = (a * b).ToString();
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            if(b == 0)
+            if (listLogin.SelectedIndex == -1)
             {
-                MessageBox.Show("Division by zero is impossible!");
-                
+                return;
             }
             else
-            lblMessage.Content = (a / b).ToString();
-        }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-            if (b == 0)
             {
-                MessageBox.Show("Division by zero is impossible!");
 
+                Nametxt.Text = User.GetUser(listLogin.SelectedItem.ToString()).Name;
+                Logintxt.Text = User.GetUser(listLogin.SelectedItem.ToString()).Login;
+                Emailtxt.Text = User.GetUser(listLogin.SelectedItem.ToString()).Email;
+                Phonetxt.Text = User.GetUser(listLogin.SelectedItem.ToString()).PhoneNumber;
             }
-            else
-                lblMessage.Content = (a / b).ToString();
         }
 
-        private void Button_Click_5(object sender, RoutedEventArgs e)
-        {
-            lblMessage.Content =  Math.Pow(a, b);
-        }
 
-        // Создать кнопочный калькулятор с действиями + - / * 
+
     }
 }

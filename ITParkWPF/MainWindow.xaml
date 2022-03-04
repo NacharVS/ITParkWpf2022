@@ -5,22 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="816" >
-    <Grid>
+        Title="MyWpfApp" Height="550" Width="900" >
+    <Grid Margin="0,0,-16,-6">
         <Grid.ColumnDefinitions>
 
         </Grid.ColumnDefinitions>
-        <Button x:Name="bigbtn" Content="ShowRes" HorizontalAlignment="Left" Margin="10,379,0,0" VerticalAlignment="Top" Height="101" Width="301" FontSize="72" Click="bigbtn_Click"/>
-        <Label x:Name="lbl1" Content="My First WPF APP" HorizontalAlignment="Left" VerticalAlignment="Top" Height="92" Width="796" FontSize="65" HorizontalContentAlignment="Center" FontFamily="Txt" Margin="10,62,0,0" Grid.ColumnSpan="2" FontWeight="Bold" MouseMove="lbl1_MouseMove" MouseEnter="lbl1_MouseEnter"/>
-        <Border BorderThickness="1" BorderBrush="Black" Margin="329,379,10,26" Height="101"/>
-        <Label x:Name="lblMessage" Content="" HorizontalAlignment="Left" Margin="329,379,0,0" VerticalAlignment="Top" Width="477" Height="101" FontSize="70" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Left" Margin="10,178,0,0" Text="First Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="373" Height="88" FontSize="48" GotFocus="txt1_GotFocus" TextChanged="txt1_TextChanged"/>
-        <TextBox x:Name="txt2" HorizontalAlignment="Left" Margin="408,178,0,0" Text="Second Number" TextWrapping="Wrap" VerticalAlignment="Top" Width="361" Height="88" FontSize="48" GotFocus="txt2_GotFocus" TextChanged="txt2_TextChanged"/>
-        <Button Content="+" HorizontalAlignment="Left" Margin="182,285,0,0" VerticalAlignment="Top" Height="68" Width="81" FontSize="36" Click="Button_Click"/>
-        <Button Content="-" HorizontalAlignment="Left" Margin="294,285,0,0" VerticalAlignment="Top" Height="68" Width="64" FontSize="36" Click="Button_Click_1"/>
-        <Button Content="*" HorizontalAlignment="Left" Margin="388,285,0,0" VerticalAlignment="Top" Height="68" Width="79" FontSize="36" Click="Button_Click_2"/>
-        <Button Content="/" HorizontalAlignment="Left" Margin="510,285,0,0" VerticalAlignment="Top" Height="68" Width="78" FontSize="36"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="666,285,0,0" VerticalAlignment="Top" Height="54" Width="87" Click="Button_Click_5"/>
+        <GroupBox Header="Registration" Margin="0,14,458,10" FontSize="24"/>
+        <TextBox x:Name="Nametxt" HorizontalAlignment="Left" Margin="45,94,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="413" FontSize="18" Height="48" GotFocus="Nametxt_GotFocus" />
+        <TextBox x:Name="Logintxt" HorizontalAlignment="Left" Margin="45,167,0,0" TextWrapping="Wrap" Text="Login" VerticalAlignment="Top" Width="413" FontSize="20" Height="45" GotFocus="Logintxt_GotFocus" TextChanged="Logintxt_TextChanged" TextInput="Logintxt_TextInput"/>
+        <TextBox x:Name="Emailtxt" HorizontalAlignment="Left" Margin="45,251,0,0" TextWrapping="Wrap" Text="E-mail" VerticalAlignment="Top" Width="413" FontSize="20" Height="43" GotFocus="Emailtxt_GotFocus"/>
+        <TextBox x:Name="Phonetxt" HorizontalAlignment="Left" Margin="45,323,0,0" TextWrapping="Wrap" Text="Phone" VerticalAlignment="Top" Width="413" FontSize="20" Height="49" GotFocus="Phonetxt_GotFocus"/>
+        <Button x:Name="SignUp" Content="Sign Up" HorizontalAlignment="Left" Margin="25,401,0,0" VerticalAlignment="Top" FontSize="22" Height="55" Width="204" Click="SignUp_Click"/>
+        <ListBox x:Name="listLogin" Margin="486,32,32,22" Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged"/>
+        <Button Content="UpdateUser" HorizontalAlignment="Left" Margin="247,401,0,0" VerticalAlignment="Top" Click="Button_Click" Width="207" Height="55"/>
 
     </Grid>
 </Window>
