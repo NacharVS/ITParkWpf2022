@@ -53,6 +53,13 @@ namespace ITParkWPF
             return foundedUser;
         }
 
+        public static void ReplaceOne(string login, User newinfo)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Registration");
+            var collection = database.GetCollection<User>("Users");
+            collection.ReplaceOne(x => x.Login == login, newinfo);
+        }
         // Реализовать кнопку редактирования уже существующего пользователя
 
     }

@@ -62,7 +62,7 @@ namespace ITParkWPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            User.ReplaceOne("Login", user);
         }
 
         private void listLogin_Loaded(object sender, RoutedEventArgs e)
