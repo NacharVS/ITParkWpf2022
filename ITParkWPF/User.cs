@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,8 @@ namespace ITParkWPF
             Email = email;
             PhoneNumber = phoneNumber;
         }
+        [BsonId]
+        [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
         public string Login { get; set; }
         public string Name { get; set; }
@@ -53,12 +56,15 @@ namespace ITParkWPF
             return foundedUser;
         }
 
-        public static void ReplaceOne(string login, User newinfo)
+        public static void ReplaceOne(string login, string name, string email, string phoneNumber, User newinfo)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
             collection.ReplaceOne(x => x.Login == login, newinfo);
+            collection.ReplaceOne(x => x.Name == name, newinfo);
+            collection.ReplaceOne(x => x.Email == email, newinfo);
+            collection.ReplaceOne(x => x.PhoneNumber == phoneNumber, newinfo);
         }
         // Реализовать кнопку редактирования уже существующего пользователя
 
