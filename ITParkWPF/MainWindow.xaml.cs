@@ -22,6 +22,8 @@ namespace ITParkWPF
     {
        string bufLogin = "Login";
         User user = new User("Name", "Login", "E-Mail", "Phone");
+
+        string[] teamList = new string[5] { "#1", "#2", "#3", "#4", "#5" };
         public MainWindow()
         {
             InitializeComponent();
@@ -57,7 +59,7 @@ namespace ITParkWPF
 
         private void txtLogin_SourceUpdated(object sender, DataTransferEventArgs e)
         {
-            
+            cmbbox1.SelectedItem.ToString();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -98,6 +100,34 @@ namespace ITParkWPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            List<string> buffer = User.GetLoginList();
+            if(cmbbox1.SelectedIndex == 1)
+            {
+                Random rnd = new Random();
+                for (int i = 0; i < teamList.Length ; i++)
+                {
+                    teamList[i] = buffer[rnd.Next(0, buffer.Count)];
+                    buffer.Remove(teamList[i]);
+                }
+                teammate1.Content = "#1 " + teamList[0];
+                teammate2.Content = "#2 " + teamList[1];
+                teammate3.Content = "#3 " + teamList[2];
+                teammate4.Content = "#4 " + teamList[3];
+                teammate5.Content = "#5 " + teamList[4];
+
+            }
+            if(cmbbox1.SelectedIndex == 2)
+            {
+                teammate1.Content = "#1 ";
+                teammate2.Content = "#2 ";
+                teammate3.Content = "#3 ";
+                teammate4.Content = "#4 ";
+                teammate5.Content = "#5 ";
+            }
         }
     }
 }

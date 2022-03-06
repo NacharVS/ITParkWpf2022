@@ -19,18 +19,22 @@
         <Button Content="Sign Up" HorizontalAlignment="Left" Margin="58,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
         <ListBox x:Name="listLogin" Margin="459,24,731,31" Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged" />
         <Button Content="UpdateUser" HorizontalAlignment="Left" Margin="58,417,0,0" VerticalAlignment="Top" Width="372" Height="69" Click="Button_Click_1" FontSize="36"/>
-        <GroupBox Header="Team" Margin="788,24,413,283" FontSize="24"/>
-        <Label Content="#1" HorizontalAlignment="Left" Margin="801,70,0,0" VerticalAlignment="Top" Width="236"/>
-        <Label Content="#2" HorizontalAlignment="Left" Margin="801,101,0,0" VerticalAlignment="Top" Width="236"/>
-        <Label Content="#5" HorizontalAlignment="Left" Margin="801,208,0,0" VerticalAlignment="Top" Width="236"/>
-        <Label Content="#4" HorizontalAlignment="Left" Margin="801,174,0,0" VerticalAlignment="Top" Width="236"/>
-        <Label Content="#3" HorizontalAlignment="Left" Margin="801,135,0,0" VerticalAlignment="Top" Width="236"/>
-        <ComboBox x:Name="cmbbox1" HorizontalAlignment="Left" Margin="788,243,0,0" VerticalAlignment="Top" Width="262" MaxDropDownHeight="45" SelectedIndex="1">
+        <GroupBox Header="Team" Margin="788,24,413,253" FontSize="24"/>
+        <Label x:Name="teammate1" Content="#1" HorizontalAlignment="Left" Margin="801,70,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate2" Content="#2" HorizontalAlignment="Left" Margin="801,101,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate5" Content="#5" HorizontalAlignment="Left" Margin="801,208,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate4" Content="#4" HorizontalAlignment="Left" Margin="801,174,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate3" Content="#3" HorizontalAlignment="Left" Margin="801,135,0,0" VerticalAlignment="Top" Width="236"/>
+        <ComboBox x:Name="cmbbox1" HorizontalAlignment="Left" Margin="788,268,0,0" VerticalAlignment="Top" Width="262" MaxDropDownHeight="45" SelectedIndex="1">
             <ListBoxItem Content="Add Custom"/>
             <ListBoxItem Content="Random Selection"/>
             <ListBoxItem Content="ClearTeam"/>
         </ComboBox>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="788,352,0,0" VerticalAlignment="Top" Width="262"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="788,342,0,0" VerticalAlignment="Top" Width="262" Click="Button_Click_2"/>
+        <TextBox x:Name="teamname" HorizontalAlignment="Left" Margin="788,403,0,0" Text="TeamName" TextWrapping="Wrap" VerticalAlignment="Top" Width="262"/>
+        <ListBox Margin="1095,39,161,10"/>
+        <Button Content="AddTeamToDB" HorizontalAlignment="Left" Margin="788,466,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button Content="UpdateTeam" HorizontalAlignment="Left" Margin="919,466,0,0" VerticalAlignment="Top" Width="131"/>
 
     </Grid>
 </Window>
