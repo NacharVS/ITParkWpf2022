@@ -129,5 +129,39 @@ namespace ITParkWPF
                 teammate5.Content = "#5 ";
             }
         }
+
+        private void ListBox_Loaded(object sender, RoutedEventArgs e)
+        {
+            teamListBox.ItemsSource = Team.GetTeamList();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (teamListBox.Items.Contains(teamname.Text))
+            {
+                MessageBox.Show("Team alredy exists");
+            }
+            else
+            {
+                Team.AddTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()));
+                teamListBox.ItemsSource = Team.GetTeamList();
+                teamname.Clear();
+                teammate1.Content = "#1 ";
+                teammate2.Content = "#2 ";
+                teammate3.Content = "#3 ";
+                teammate4.Content = "#4 ";
+                teammate5.Content = "#5 ";
+            }
+     
+        }
+
+        private void teamListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            teammate1.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate1;
+            teammate2.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate2;
+            teammate3.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate3;
+            teammate4.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate4;
+            teammate5.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate5;
+        }
     }
 }
