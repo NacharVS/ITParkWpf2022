@@ -62,7 +62,11 @@ namespace ITParkWPF
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            if (listLogin.SelectedItem == null)
+                MessageBox.Show("Check user to update");
+            else
+            User.ReplaseUser(listLogin.SelectedItem.ToString(), new User(txtLogin.Text, txtName1.Text, txtEmail.Text, txtPhone.Text));
+            listLogin.ItemsSource = User.GetLoginList();
         }
 
         private void listLogin_Loaded(object sender, RoutedEventArgs e)

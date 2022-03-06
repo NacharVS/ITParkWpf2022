@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,14 @@ namespace ITParkWPF
 {
     class User
     {
-        public User(string name, string login, string email, string phoneNumber)
+        public User(string login, string name,  string email, string phoneNumber)
         {
             Name = name;
             Login = login;
             Email = email;
             PhoneNumber = phoneNumber;
         }
+        [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
         public string Name { get; set; }
         public string Login { get; set; }
@@ -49,11 +51,21 @@ namespace ITParkWPF
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
-            var foundedUser = collection.Find(x => x.Name == name).FirstOrDefault();
+            var foundedUser = collection.Find(x => x.Login == name).FirstOrDefault();
             return foundedUser;
         }
 
-        // Реализовать кнопку редактирования уже существующего пользователя
+        public static void ReplaseUser(string nameFromList, User updated)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Registration");
+            var collection = database.GetCollection<User>("Users");
+            collection.ReplaceOne(x => x.Login == nameFromList, updated);
+        }
 
     }
+
+    // Реализовать кнопку редактирования уже существующего пользователя
+
 }
+
