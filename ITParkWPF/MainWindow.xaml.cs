@@ -156,12 +156,13 @@ namespace ITParkWPF
         }
 
         private void teamListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            teammate1.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate1;
-            teammate2.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate2;
-            teammate3.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate3;
-            teammate4.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate4;
-            teammate5.Content = Team.GetTeam(teamListBox.SelectedItem.ToString()).Teammate5;
+        { Team team = Team.GetTeam(teamListBox.SelectedItem.ToString());
+
+            teammate1.Content = team.Teammate1;
+            teammate2.Content = team.Teammate2;
+            teammate3.Content = team.Teammate3;
+            teammate4.Content = team.Teammate4;
+            teammate5.Content = team.Teammate5;
         }
     }
 }
