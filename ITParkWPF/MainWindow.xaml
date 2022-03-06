@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="860" Loaded="Window_Loaded" >
+        Title="MyWpfApp" Height="533" Width="1463" Loaded="Window_Loaded" >
     <Grid>
         <Grid.ColumnDefinitions>
 
@@ -17,8 +17,20 @@
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="58,245,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="58,174,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
         <Button Content="Sign Up" HorizontalAlignment="Left" Margin="58,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
-        <ListBox x:Name="listLogin" Margin="459,24,18,20" Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged" />
+        <ListBox x:Name="listLogin" Margin="459,24,731,31" Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged" />
         <Button Content="UpdateUser" HorizontalAlignment="Left" Margin="58,417,0,0" VerticalAlignment="Top" Width="372" Height="69" Click="Button_Click_1" FontSize="36"/>
+        <GroupBox Header="Team" Margin="788,24,413,283" FontSize="24"/>
+        <Label Content="#1" HorizontalAlignment="Left" Margin="801,70,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label Content="#2" HorizontalAlignment="Left" Margin="801,101,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label Content="#5" HorizontalAlignment="Left" Margin="801,208,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label Content="#4" HorizontalAlignment="Left" Margin="801,174,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label Content="#3" HorizontalAlignment="Left" Margin="801,135,0,0" VerticalAlignment="Top" Width="236"/>
+        <ComboBox x:Name="cmbbox1" HorizontalAlignment="Left" Margin="788,243,0,0" VerticalAlignment="Top" Width="262" MaxDropDownHeight="45" SelectedIndex="1">
+            <ListBoxItem Content="Add Custom"/>
+            <ListBoxItem Content="Random Selection"/>
+            <ListBoxItem Content="ClearTeam"/>
+        </ComboBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="788,352,0,0" VerticalAlignment="Top" Width="262"/>
 
     </Grid>
 </Window>
