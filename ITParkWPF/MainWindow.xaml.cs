@@ -63,7 +63,7 @@ namespace ITParkWPF
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             User.ReplaceOne(txtLogin.Text, txtName1.Text, txtEmail.Text, txtPhone.Text, new User (txtLogin.Text, txtName1.Text, txtEmail.Text, txtPhone.Text));
-         
+            listLogin_Loaded(sender, e);
         }
 
         private void listLogin_Loaded(object sender, RoutedEventArgs e)
