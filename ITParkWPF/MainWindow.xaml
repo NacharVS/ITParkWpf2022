@@ -5,36 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="538" Width="347" >
-    <Grid Margin="0,10,19,90">
+        Title="MyWpfApp" Height="522" Width="860" >
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="313*"/>
 
         </Grid.ColumnDefinitions>
-        <Button x:Name="btn12" Content="=" HorizontalAlignment="Left" Margin="226,347,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="20" Click="btn12_Click"/>
-        <Button x:Name="btn10" Content="." HorizontalAlignment="Left" Margin="160,347,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20" Click="btn10_Click"/>
-        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Margin="94,347,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn0_Click" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn11" Content="+/-" HorizontalAlignment="Left" Margin="30,347,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="20" />
-        <Button x:Name="btn13" Content="+" HorizontalAlignment="Left" Margin="226,292,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="20" Click="btn13_Click"/>
-        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Margin="160,292,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn3_Click" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Margin="94,292,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn2_Click" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Margin="30,292,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn1_Click" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn14" Content="-" HorizontalAlignment="Left" Margin="226,237,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="20" Click="btn14_Click"/>
-        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Margin="160,237,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn6_Click" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Margin="94,237,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn5_Click" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Margin="30,237,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn4_Click"  FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn15" Content="*" HorizontalAlignment="Left" Margin="226,182,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="20" Click="btn15_Click"/>
-        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Margin="160,182,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn9_Click" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Margin="94,182,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn8_Click" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Margin="30,182,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn7_Click" FontWeight="Bold" FontSize="20"/>
-        <Button x:Name="btn16" Content="/" HorizontalAlignment="Left" Margin="226,127,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="16" Click="btn16_Click"/>
-        <Button x:Name="btn17" Content="Backspace" HorizontalAlignment="Left" Margin="160,127,0,0" VerticalAlignment="Top" Height="50" Width="60" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="11"/>
-        <Button x:Name="btn18" Content="Clear" HorizontalAlignment="Left" Margin="94,127,0,0" VerticalAlignment="Top" Height="50" Width="60" Click="btn18_Click" FontWeight="Bold"/>
-        <Button x:Name="btn19" Content="a^b" HorizontalAlignment="Left" Margin="30,127,0,0" VerticalAlignment="Top" Height="50" Width="60" FontWeight="Bold" FontSize="16" Click="btn19_Click"/>
-        <TextBox x:Name="txt1" HorizontalAlignment="Left" Margin="30,34,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="256" Height="80" FlowDirection="RightToLeft" FontSize="18"  />
-        <Label x:Name="lbl1" Content=" " HorizontalAlignment="Right" Margin="0,82,27,0" VerticalAlignment="Top" Width="191" Height="32" FontSize="18" FlowDirection="LeftToRight"/>
-        <Button x:Name="btn_Close" Content="Close" HorizontalAlignment="Left" Margin="226,-9,0,0" VerticalAlignment="Top" Width="61" Click="btn_Close_Click" Height="38" FontSize="16" BorderBrush="Black" Background="Red" FontWeight="Bold"/>
-
+        <GroupBox Header="Registration" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Height="486" Width="418" Margin="14,0,0,0">
+            <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="10,0,0,0" Text="Login" TextWrapping="Wrap" Width="365" Height="45" VerticalAlignment="Top" GotFocus="txtLogin_GotFocus" TextChanged="txtLogin_TextChanged" />
+        </GroupBox>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="31,111,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24" GotFocus="txtName_GotFocus"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="31,245,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24" GotFocus="txtPhone_GotFocus"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="31,173,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24" GotFocus="txtEmail_GotFocus"/>
+        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="31,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
+        <ListBox x:Name="listLogin" Margin="458,10,27,10"  Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="31,397,0,0" VerticalAlignment="Top" Height="83" Width="372" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
