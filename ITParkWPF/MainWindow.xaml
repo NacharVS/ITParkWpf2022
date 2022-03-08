@@ -5,20 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkWPF"
         mc:Ignorable="d"
-        Title="MyWpfApp" Height="522" Width="860" >
+        Title="MyWpfApp" Height="533" Width="1463" Loaded="Window_Loaded" >
     <Grid>
         <Grid.ColumnDefinitions>
 
         </Grid.ColumnDefinitions>
-        <GroupBox Header="Registration" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Height="486" Width="418" Margin="14,0,0,0">
-            <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="10,0,0,0" Text="Login" TextWrapping="Wrap" Width="365" Height="45" VerticalAlignment="Top" GotFocus="txtLogin_GotFocus" TextChanged="txtLogin_TextChanged" />
+        <GroupBox Header="Registration" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Top" Height="486" Width="418" Margin="41,12,0,0">
+            <TextBox x:Name="txtLogin" HorizontalAlignment="Left" Margin="10,0,0,0" Text="Login" TextWrapping="Wrap" Width="365" Height="45" VerticalAlignment="Top" GotFocus="txtLogin_GotFocus" TextChanged="txtLogin_TextChanged" TextInput="txtLogin_TextInput" SourceUpdated="txtLogin_SourceUpdated"/>
         </GroupBox>
-        <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="31,111,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24" GotFocus="txtName_GotFocus"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="31,245,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24" GotFocus="txtPhone_GotFocus"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="31,173,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24" GotFocus="txtEmail_GotFocus"/>
-        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="31,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
-        <ListBox x:Name="listLogin" Margin="458,10,27,10"  Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="31,397,0,0" VerticalAlignment="Top" Height="83" Width="372" Click="Button_Click_1"/>
+        <TextBox x:Name="txtName1" HorizontalAlignment="Left" Margin="58,112,0,0" Text="Name" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Margin="58,245,0,0" Text="Phone" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="39" FontSize="24"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="58,174,0,0" Text="E-mail" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Height="38" FontSize="24"/>
+        <Button Content="Sign Up" HorizontalAlignment="Left" Margin="58,312,0,0" VerticalAlignment="Top" Width="372" Height="80" FontSize="36" Click="Button_Click"/>
+        <ListBox x:Name="listLogin" Margin="459,24,731,31" Loaded="listLogin_Loaded" SelectionChanged="listLogin_SelectionChanged" />
+        <Button Content="UpdateUser" HorizontalAlignment="Left" Margin="58,417,0,0" VerticalAlignment="Top" Width="372" Height="69" Click="Button_Click_1" FontSize="36"/>
+        <GroupBox Header="Team" Margin="788,24,413,253" FontSize="24"/>
+        <Label x:Name="teammate1" Content="#1" HorizontalAlignment="Left" Margin="801,70,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate2" Content="#2" HorizontalAlignment="Left" Margin="801,101,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate5" Content="#5" HorizontalAlignment="Left" Margin="801,208,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate4" Content="#4" HorizontalAlignment="Left" Margin="801,174,0,0" VerticalAlignment="Top" Width="236"/>
+        <Label x:Name="teammate3" Content="#3" HorizontalAlignment="Left" Margin="801,135,0,0" VerticalAlignment="Top" Width="236"/>
+        <ComboBox x:Name="cmbbox1" HorizontalAlignment="Left" Margin="788,268,0,0" VerticalAlignment="Top" Width="262" MaxDropDownHeight="45" SelectedIndex="1">
+            <ListBoxItem Content="Add Custom"/>
+            <ListBoxItem Content="Random Selection"/>
+            <ListBoxItem Content="ClearTeam"/>
+        </ComboBox>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="788,342,0,0" VerticalAlignment="Top" Width="262" Click="Button_Click_2"/>
+        <TextBox x:Name="teamname" HorizontalAlignment="Left" Margin="788,403,0,0" Text="TeamName" TextWrapping="Wrap" VerticalAlignment="Top" Width="262"/>
+        <ListBox x:Name="teamListBox" Margin="1095,39,161,10" Loaded="ListBox_Loaded" SelectionChanged="teamListBox_SelectionChanged"/>
+        <Button Content="AddTeamToDB" HorizontalAlignment="Left" Margin="788,466,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_3"/>
+        <Button Content="UpdateTeam" HorizontalAlignment="Left" Margin="919,466,0,0" VerticalAlignment="Top" Width="131"/>
 
     </Grid>
 </Window>

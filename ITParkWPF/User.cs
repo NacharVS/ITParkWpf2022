@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -10,58 +11,62 @@ namespace ITParkWPF
 {
     class User
     {
-        public User(string name, string login, string email, string phoneNumber)
+        public User(string login, string name, string email, string phoneNumber)
         {
-            Name = name;
             Login = login;
+            Name = name;
+            //Login = login;
             Email = email;
             PhoneNumber = phoneNumber;
         }
-
+        [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
-        public string Name { get; set; }
         public string Login { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
 
-        public static void AddProductToDatabase(string name, string login, string email, string phone)
+        public static void AddToDB(string login, string name, string email, string phone)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
             collection.InsertOne(new User(login, name, email, phone));
-
         }
 
-        public static List<string> GetUserList()
+        public static List<string> GetLoginList()
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
-            var listUserFromBD = collection.Find(x => true).ToList();
+            var listUsersFromDB = collection.Find(x => true).ToList();
             List<string> listToReturn = new List<string>();
-            foreach (var item in listUserFromBD)
+            foreach (var item in listUsersFromDB)
             {
                 listToReturn.Add(item.Login);
             }
             return listToReturn;
         }
-        public static User GetUser(string name)
+        public static User GetUser(string login)
         {
             var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("Registrtion");
+            var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
-            var FoundUser = collection.Find(x => x.Name == name).FirstOrDefault();
-
-            return FoundUser;
+            var foundedUser = collection.Find(x => x.Login == login).FirstOrDefault();
+            return foundedUser;
         }
 
-        public static void ReplaceUser(string name, User newInfo)
+        public static void ReplaseUser(string nameFromList, User updated)
         {
             var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("Registrtion");
+            var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<User>("Users");
-            collection.ReplaceOne(x => x.Name == name, newInfo);
+            collection.ReplaceOne(x => x.Login == nameFromList, updated);
         }
+
     }
+
+    // Реализовать кнопку редактирования уже существующего пользователя
+
 }
+
