@@ -60,11 +60,13 @@ namespace ITParkWPF
             return foundedUser;
         }
 
-        public static void AddCustom() 
+        public static void AddCustom(User user) 
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Registration");
             var collection = database.GetCollection<Team>("Teams");
+            var defenition = Builders<Team>.Update.Push(x => x.TeamName, User.GetLoginList());
+            collection.UpdateOne(x => x.Teammate5 = User.GetLoginList().ToString, defenition);
         }
 
 

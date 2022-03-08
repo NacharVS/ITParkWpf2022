@@ -165,5 +165,10 @@ namespace ITParkWPF
             teammate4.Content = team.Teammate4;
             teammate5.Content = team.Teammate5;
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
