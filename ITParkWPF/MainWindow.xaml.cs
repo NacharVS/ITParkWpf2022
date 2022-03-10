@@ -181,7 +181,8 @@ namespace ITParkWPF
         }
 
         private void teamListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        { 
+        {
+            teamListBox.ItemsSource = Team.GetTeamList();
             Team team = Team.GetTeam(teamListBox.SelectedItem.ToString());
             teamname.Text = team.TeamName;
 
@@ -204,7 +205,19 @@ namespace ITParkWPF
 
             else
             {
-                Team.ReplaceTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()), teamListBox.SelectedItem.ToString());
+                if(Team.GetTeamList().Exists(x => x == teamname.Text))
+                {
+                    MessageBox.Show("Team already exists in database");
+                }
+                else
+                {
+                    Team.ReplaceTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()), teamListBox.SelectedItem.ToString());
+                    teamListBox.SelectedItem = teamname.Text;
+                    teamListBox.ItemsSource = Team.GetTeamList();
+
+                }
+                
+                
             }
         }
     }
