@@ -22,6 +22,7 @@ namespace ITParkWPF
     {
        string bufLogin = "Login";
         User user = new User("Name", "Login", "E-Mail", "Phone");
+        List<string> buffer;
 
         string[] teamList = new string[5] { "#1", "#2", "#3", "#4", "#5" };
         public MainWindow()
@@ -104,7 +105,30 @@ namespace ITParkWPF
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            List<string> buffer = User.GetLoginList();
+             
+            if(cmbbox1.SelectedIndex == 0)
+            {
+                if(teammate1.Content.ToString() == "#1")
+                {
+                    if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
+                    {
+                        teammate1.Content = listLogin.SelectedItem;
+                        buffer.Remove(listLogin.SelectedItem.ToString());
+                    }
+                    else MessageBox.Show("Current user already in team!");
+                }
+
+                else
+                {
+                    if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
+                    {
+                        teammate2.Content = listLogin.SelectedItem;
+                        buffer.Remove(listLogin.SelectedItem.ToString());
+                    }
+                    else MessageBox.Show("Current user already in team!");
+                }
+                   
+            }
             if(cmbbox1.SelectedIndex == 1)
             {
                 Random rnd = new Random();
@@ -163,6 +187,11 @@ namespace ITParkWPF
             teammate3.Content = team.Teammate3;
             teammate4.Content = team.Teammate4;
             teammate5.Content = team.Teammate5;
+        }
+
+        private void cmbbox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            buffer =  User.GetLoginList();
         }
     }
 }
