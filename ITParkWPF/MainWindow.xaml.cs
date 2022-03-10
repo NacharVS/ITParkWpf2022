@@ -131,6 +131,7 @@ namespace ITParkWPF
             }
             if(cmbbox1.SelectedIndex == 1)
             {
+                buffer = User.GetLoginList();
                 Random rnd = new Random();
                 for (int i = 0; i < teamList.Length ; i++)
                 {
@@ -180,7 +181,9 @@ namespace ITParkWPF
         }
 
         private void teamListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        { Team team = Team.GetTeam(teamListBox.SelectedItem.ToString());
+        { 
+            Team team = Team.GetTeam(teamListBox.SelectedItem.ToString());
+            teamname.Text = team.TeamName;
 
             teammate1.Content = team.Teammate1;
             teammate2.Content = team.Teammate2;
@@ -192,6 +195,17 @@ namespace ITParkWPF
         private void cmbbox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             buffer =  User.GetLoginList();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (teamListBox.SelectedIndex == -1)
+                MessageBox.Show("Choose the team!!!");
+
+            else
+            {
+                Team.ReplaceTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()), teamListBox.SelectedItem.ToString());
+            }
         }
     }
 }

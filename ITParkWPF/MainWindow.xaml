@@ -34,7 +34,7 @@
         <TextBox x:Name="teamname" HorizontalAlignment="Left" Margin="788,403,0,0" Text="TeamName" TextWrapping="Wrap" VerticalAlignment="Top" Width="262"/>
         <ListBox x:Name="teamListBox" Margin="1095,39,161,10" Loaded="ListBox_Loaded" SelectionChanged="teamListBox_SelectionChanged"/>
         <Button Content="AddTeamToDB" HorizontalAlignment="Left" Margin="788,466,0,0" VerticalAlignment="Top" Width="116" Click="Button_Click_3"/>
-        <Button Content="UpdateTeam" HorizontalAlignment="Left" Margin="919,466,0,0" VerticalAlignment="Top" Width="131"/>
+        <Button Content="UpdateTeam" HorizontalAlignment="Left" Margin="919,466,0,0" VerticalAlignment="Top" Width="131" Click="Button_Click_4"/>
 
     </Grid>
 </Window>

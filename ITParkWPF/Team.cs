@@ -22,6 +22,7 @@ namespace ITParkWPF
         }
         [BsonIgnoreIfDefault]
         public ObjectId _id { get; set; }
+        [BsonIgnoreIfDefault]
         public string TeamName { get; set; }
 
         public string Teammate1 { get; set; }
@@ -60,6 +61,13 @@ namespace ITParkWPF
             return foundedUser;
         }
 
+        public static void ReplaceTeamToDB(Team team, string teamName)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("Registration");
+            var collection = database.GetCollection<Team>("Teams");
+            collection.ReplaceOne(x => x.TeamName == teamName, team);
+        }
 
         // Реализовать функцию приложения добавление игрока вручную (Add Сustom). Выбраный из ссписка Users игрок добавляется
         // на первое свободное место в команде. До тех, пока команла не будет заполнена. Нельзя добавить команду в базу,
