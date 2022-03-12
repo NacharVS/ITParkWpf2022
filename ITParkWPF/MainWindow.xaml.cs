@@ -232,6 +232,7 @@ namespace ITParkWPF
             else
             {
                 Team.ReplaceTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()), teamname.Text);
+                teamListBox.SelectedItem = teamname.Text;
                 teamListBox.ItemsSource = Team.GetTeamList();
                 
             }
