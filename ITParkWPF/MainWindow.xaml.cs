@@ -181,7 +181,8 @@ namespace ITParkWPF
         }
 
         private void teamListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        { 
+        {
+            
             Team team = Team.GetTeam(teamListBox.SelectedItem.ToString());
             teamname.Text = team.TeamName;
 
@@ -204,7 +205,9 @@ namespace ITParkWPF
 
             else
             {
-                Team.ReplaceTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()), teamListBox.SelectedItem.ToString());
+                Team.ReplaceTeamToDB(new Team(teamname.Text, teammate1.Content.ToString(), teammate2.Content.ToString(), teammate3.Content.ToString(), teammate4.Content.ToString(), teammate5.Content.ToString()), teamname.Text);
+                teamListBox.ItemsSource = Team.GetTeamList();
+                
             }
         }
     }
