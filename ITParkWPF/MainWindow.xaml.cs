@@ -105,35 +105,61 @@ namespace ITParkWPF
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-             
-            if(cmbbox1.SelectedIndex == 0)
+            if (cmbbox1.SelectedIndex == 0)
             {
-                if(teammate1.Content.ToString() == "#1")
+                if (teammate1.Content.ToString() == "#1")
                 {
                     if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
                     {
-                        teammate1.Content = listLogin.SelectedItem;
+                        teammate1.Content = "#1 " + listLogin.SelectedItem;
                         buffer.Remove(listLogin.SelectedItem.ToString());
                     }
                     else MessageBox.Show("Current user already in team!");
                 }
 
-                else
+                else if (teammate2.Content.ToString() == "#2")
                 {
                     if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
                     {
-                        teammate2.Content = listLogin.SelectedItem;
+                        teammate2.Content = "#2 " + listLogin.SelectedItem;
                         buffer.Remove(listLogin.SelectedItem.ToString());
                     }
                     else MessageBox.Show("Current user already in team!");
                 }
-                   
+                else if (teammate3.Content.ToString() == "#3")
+                {
+                    if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
+                    {
+                        teammate3.Content = "#3 " + listLogin.SelectedItem;
+                        buffer.Remove(listLogin.SelectedItem.ToString());
+                    }
+                    else MessageBox.Show("Current user already in team!");
+                }
+                else if (teammate4.Content.ToString() == "#4")
+                {
+                    if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
+                    {
+                        teammate4.Content = "#4 " + listLogin.SelectedItem;
+                        buffer.Remove(listLogin.SelectedItem.ToString());
+                    }
+                    else MessageBox.Show("Current user already in team!");
+                }
+                else
+                {
+                    if (buffer.Exists(x => x == listLogin.SelectedItem.ToString()))
+                    {
+                        teammate5.Content = "#5 " + listLogin.SelectedItem;
+                        buffer.Remove(listLogin.SelectedItem.ToString());
+                    }
+                    else MessageBox.Show("Current user already in team!");
+                }
+
             }
-            if(cmbbox1.SelectedIndex == 1)
+            if (cmbbox1.SelectedIndex == 1)
             {
                 buffer = User.GetLoginList();
                 Random rnd = new Random();
-                for (int i = 0; i < teamList.Length ; i++)
+                for (int i = 0; i < teamList.Length; i++)
                 {
                     teamList[i] = buffer[rnd.Next(0, buffer.Count)];
                     buffer.Remove(teamList[i]);
@@ -145,7 +171,7 @@ namespace ITParkWPF
                 teammate5.Content = "#5 " + teamList[4];
 
             }
-            if(cmbbox1.SelectedIndex == 2)
+            if (cmbbox1.SelectedIndex == 2)
             {
                 teammate1.Content = "#1 ";
                 teammate2.Content = "#2 ";
