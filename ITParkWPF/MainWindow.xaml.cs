@@ -182,6 +182,33 @@ namespace ITParkWPF
                 teammate4.Content = "#4 ";
                 teammate5.Content = "#5 ";
             }
+            if (cmbbox1.SelectedIndex == 3)
+            {
+                if (teammate5.Content.ToString() != "#5")
+                {
+                    teammate5.Content = "#5 ";
+                }
+                else
+                if (teammate4.Content.ToString() != "#4")
+                {
+                    teammate4.Content = "#4 ";
+                }
+                else
+                if (teammate3.Content.ToString() != "#3")
+                {
+                    teammate3.Content = "#3 ";
+                }
+                else
+                if (teammate2.Content.ToString() != "#2")
+                {
+                    teammate2.Content = "#2 ";
+                }
+                else
+                if (teammate4.Content.ToString() != "#1")
+                {
+                    teammate4.Content = "#1 ";
+                }
+            }
         }
 
         private void ListBox_Loaded(object sender, RoutedEventArgs e)
